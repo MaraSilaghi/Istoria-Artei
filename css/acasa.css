@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Noto+Serif+Lao:wght@400;500;600;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E8E7E5;
+  margin: 0;
+  overflow-y: scroll;      /*fara scrollbar orizontal*/
+  overflow-x: hidden;
+}
+
+h1:first-child{
+  color: #3A3933;
+  font-family: 'Lora', serif;
+  font-size: 90px;
+  width: 100%;
+  position:absolute;
+  margin-top: 120px;
+  margin-left:50px;
+  padding-top: 30px;
+  z-index:1;
+ }
+  
+ p:nth-child(2){
+    color: #3A3933;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 500;
+    width: 90%;
+    line-height: 1.8;
+    position:absolute;
+    margin-top: 300px;
+    padding-left:50px;
+    text-align:justify;   /*pentru centrare*/
+    z-index:1;
+  }
+
+
+
+
+/*bara de meniu*/
+.meniu{
+  list-style-type: none;
+  background-color: transparent;
+  border-bottom: 1px solid #3A3933;
+  position:absolute;
+  width: 100%; 
+  z-index: 2;
+  margin-top: 0;
+  margin-left:-30px;
+}
+
+li {
+  float: left;
+}
+
+li a {           /*elementele din meniu*/
+  color: #3A3933;
+  font-size: 17px;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  text-align: center;
+  padding: 14px 14px;
+  float: left;
+  text-decoration: none;
+}
+
+li a:hover {       /*cand avem cursorul pe un elem din meniu*/
+  background: rgba(192, 190, 173, 0.4);
+  z-index:2;
+}
+
+.active {              /*pagina curenta din meniu*/
+  background-color: rgba(192, 190, 173, 0.4);
+  color: #3A3933;
+  font-weight: 500;
+}
+
+.dropbtn {
+  display: inline-block;
+  color: #3A3933;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+li.dropdown {
+  display: inline-block !important;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(192, 190, 173, 0.4);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.dropdown-content a {
+  color: #3A3933;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  z-index:2;
+  text-align: center;
+}
+
+.dropdown-content a:hover {background-color: rgb(241, 241, 241, 0.7);}
+
+.dropdown:hover .dropdown-content {
+  margin-top:50px;
+  display:grid;
+  z-index:2;
+}
+
+
+
+video {
+  width: 100%; 
+  height: 100%;
+  filter: brightness(90%);
+  z-index:0
+}
+
+
+/*IMAGINI*/
+#imagini{
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 1850px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+  column-gap: 15px;
+  width: 30%;
+} 
+
+/*animatie*/
+@keyframes example {
+  from {background-color: #EEEEEE;
+        padding: 15px;
+      }
+  to {background-color: rgb(165, 165, 156, 0.8);
+      padding: 11px;
+    }
+}
+
+/*casutele in care sunt imagini*/
+#imagini figure {                   
+	background: #EEEEEE;
+	box-shadow: 0 1px 2px #3A3933;
+	margin: 0 2px 15px;
+	padding: 15px;
+	padding-bottom: 10px;
+  display: inline-block;
+  transition: width 2s, height 4s;
+}
+
+#imagini figure:hover {                   /*animatie*/
+	background: #EEEEEE;
+	box-shadow: 0 1px 2px #3A3933;
+	padding: 30px;
+	padding-bottom: 10px;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+ /*picturile in sine*/
+ #imagini img{                               
+  width: 150px;
+  color: white;
+  width: 100%;
+  display: inline-block;
+  transition: width 4s, height 6s, margin 4s;      
+}
+
+#imagini img:hover{                /*tranzitie*/           
+  width: 105%;
+  color: white;
+  z-index:3;
+  margin:-7px;
+}
+
+/*text imagini*/
+#imagini figure figcaption {         
+  color: #444;
+  font-family: 'Lora', serif;
+  font-size: .9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#imagini figure figcaption::before { 
+  content: "-";
+  color: #444;
+  font-family: 'Lora', serif;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+#imagini figure figcaption::after { 
+  content: "-";
+  color: #444;
+  font-family: 'Lora', serif;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+
+
+
+
+@media only screen and (max-width: 1100px) {
+h1:first-child{
+  font-size:80px;
+ }
+
+ p:nth-child(2){
+    font-size: 18px;
+  }
+
+  li a {           /*elementele din meniu*/
+    font-size: 15px;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  h1:first-child{
+    margin-top:110px;
+    font-size:75px;
+   }
+    
+   p:nth-child(2){
+    margin-top:270px;
+    font-size: 13px;
+    }
+    li a {           /*elementele din meniu*/
+      font-size: 14px;
+    }
+  }
+
+    @media only screen and (max-width: 700px) {
+      h1:first-child{
+        margin-top: 100px;
+        font-size:55px;
+       }
+        
+       p:nth-child(2){
+          font-size: 12px;
+          margin-top: 220px;
+        }
+        li a {           /*elementele din meniu*/
+          font-size: 12px;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        h1:first-child{
+          margin-top: 90px;
+          font-size:55px;
+         }
+          
+         p:nth-child(2){
+            font-size: 10x;
+            margin-top: 210px;
+          }
+          li a {           /*elementele din meniu*/
+            font-size: 12px;
+          }
+        }
+        @media only screen and (max-width: 550px) {
+          h1:first-child{
+            margin-top: 80px;
+            font-size:50px;
+           }
+            
+           p:nth-child(2){
+              font-size: 9px;
+              margin-top: 190px;
+            }
+            li a {           /*elementele din meniu*/
+              font-size: 12px;
+            }
+          }
